@@ -1,0 +1,38 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.hero-landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    color: $color-primary-white;
+    margin: 25rem 0 $mobile-padding;
+    @include tablet {
+      margin: 25rem 0 $mobile-padding;
+    }
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: $mobile-padding;
+    border: 0.125rem solid $color-primary-white;
+    padding: $mobile-padding;
+    border-radius: 1rem;
+    background-color: $color-primary-white;
+    width: 90%;
+    &:focus-within {
+      border-color: $color-primary-indigo;
+    }
+
+    @include tablet {
+      width: 60%;
+    }
+  }
+
+  &__input {
+    outline: none;
+    border: none;
+  }
+}

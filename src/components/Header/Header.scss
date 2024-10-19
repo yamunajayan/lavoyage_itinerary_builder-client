@@ -1,0 +1,58 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  background-color: rgba(255, 255, 255, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: $mobile-padding;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: $tablet-padding $tablet-padding-side;
+    }
+
+    @include desktop {
+      max-width: $desktop-max-width;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
+  &__logo-image {
+    height: $mobile-logo-size;
+    width: $mobile-logo-size;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    color: $color-primary-white;
+    justify-content: space-between;
+    padding-top: $mobile-padding;
+
+    @include tablet {
+      margin: 0;
+      gap: $tablet-padding;
+    }
+  }
+
+  &__item {
+    @include tablet-nav-items;
+    font-weight: 600;
+  }
+}
