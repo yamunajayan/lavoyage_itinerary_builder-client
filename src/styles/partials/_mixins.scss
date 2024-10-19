@@ -65,3 +65,9 @@
   font-weight: $tablet-subheader-font-weight;
   line-height: $tablet-line-height-h4;
 }
+
+@mixin tablet-nav-items {
+  font-size: $tablet-font-size-nav-items;
+  font-weight: $tablet-subheader-font-weight;
+  line-height: $tablet-line-height-h3;
+}
