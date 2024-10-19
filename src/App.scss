@@ -1,0 +1,13 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/fonts" as *;
+
+* ::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
