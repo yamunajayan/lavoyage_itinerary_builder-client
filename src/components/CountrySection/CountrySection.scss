@@ -1,0 +1,53 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.country-section {
+  padding: $mobile-padding-header $mobile-padding 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include tablet {
+    padding: $tablet-padding-side;
+  }
+
+  @include desktop {
+    max-width: $desktop-max-width;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__list {
+    background-color: #f5f5f7;
+    display: flex;
+    padding: $mobile-padding;
+    flex-wrap: wrap;
+    gap: $mobile-padding;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    @include tablet {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__item {
+    width: calc(50% - 1rem);
+    &:hover {
+      transform: scale(0.9);
+      //   background-color: black;
+    }
+
+    @include tablet {
+      width: auto;
+      flex: 0 0 25%;
+      overflow: hidden;
+      &:hover {
+        transform: scale(0.9);
+        // margin: $mobile-padding;
+      }
+    }
+  }
+}
