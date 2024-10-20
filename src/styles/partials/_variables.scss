@@ -2,7 +2,7 @@
 $breakpoint-tablet: 48rem;
 $breakpoint-desktop: 80rem;
 
-$desktop-max-width: 75.5rem;
+$desktop-max-width: 80rem;
 
 $mobile-page-header-font-weight: 700;
 $tablet-page-header-font-weight: 700;
@@ -12,9 +12,9 @@ $mobile-body-font-weight: 400;
 $tablet-body-font-weight: 400;
 
 $mobile-font-size-h1: 1.75rem;
-$mobile-font-size-h2: 1.25rem;
-$mobile-font-size-h3: 0.8125rem;
-$mobile-font-size-h4: 0.725rem;
+$mobile-font-size-h2: 1.5rem;
+$mobile-font-size-h3: 1.25rem;
+$mobile-font-size-h4: 1rem;
 $mobile-font-size-p: 0.675rem;
 
 $mobile-line-height-h1: 2.25rem; // =40px
@@ -25,14 +25,14 @@ $mobile-line-height-p: 1rem; // =18px
 
 $tablet-font-size-h1: 2rem;
 $tablet-font-size-h2: 1.5rem;
-$tablet-font-size-h3: 0.875rem;
+$tablet-font-size-h3: 1rem;
 $tablet-font-size-nav-items: 1rem;
 $tablet-font-size-h4: 0.8rem;
 $tablet-font-size-p: 0.75rem;
 
 $tablet-line-height-h1: 2.5rem; // =40px
 $tablet-line-height-h2: 2rem; // =32px
-$tablet-line-height-h3: 1.375rem; // =22px
+$tablet-line-height-h3: 1.5rem; // =22px
 $tablet-line-height-h4: 1.125rem; // =18px
 $tablet-line-height-p: 1.125rem; // =18px
 
@@ -48,3 +48,6 @@ $tablet-padding: 1.5rem;
 //logo size
 $mobile-logo-size: 3rem;
 $mobile-logo-size: 3rem;
+
+$border-radius: 1rem;
+$card-border-radius: 1rem;

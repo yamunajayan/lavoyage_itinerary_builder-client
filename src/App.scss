@@ -10,6 +10,28 @@
 
 body {
   font-family: "Lato", sans-serif;
+  font-family: sans-serif;
+}
+
+h1 {
+  @include mobile-page-header;
+  @include tablet {
+    @include tablet-page-header;
+  }
+}
+
+h2 {
+  @include mobile-section-header;
+  @include tablet {
+    @include tablet-section-header;
+  }
+}
+
+h3 {
+  @include mobile-sub-header;
+  @include tablet {
+    @include tablet-sub-header;
+  }
 }
 
 ul {
