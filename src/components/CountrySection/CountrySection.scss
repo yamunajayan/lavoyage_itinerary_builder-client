@@ -37,7 +37,7 @@
     width: calc(50% - 1rem);
     &:hover {
       transform: scale(0.9);
-      background-color: black;
+      //   background-color: black;
     }
 
     @include tablet {

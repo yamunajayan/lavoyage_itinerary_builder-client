@@ -10,7 +10,9 @@
 
   &__title {
     color: $color-primary-white;
-    margin: 25rem 0 $mobile-padding;
+    margin: 18rem 0 $mobile-padding;
+    padding: 0 $mobile-padding;
+    overflow-wrap: break-word;
     background-color: rgba(0, 0, 0, 0.1);
     @include tablet {
       margin: 25rem 0 $mobile-padding;
