@@ -2,11 +2,16 @@
 @use "../../styles/partials/mixins" as *;
 
 .header {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.5);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
+
+  &--scrolled {
+    background-color: white;
+  }
 
   &__box {
     display: flex;
@@ -20,7 +25,7 @@
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      padding: $tablet-padding $tablet-padding-side;
+      padding: $tablet-padding $tablet-padding-side $mobile-padding;
     }
 
     @include desktop {
@@ -41,7 +46,7 @@
   &__list {
     display: flex;
     flex-direction: row;
-    color: $color-primary-white;
+    color: teal;
     justify-content: space-between;
     padding-top: $mobile-padding;
 

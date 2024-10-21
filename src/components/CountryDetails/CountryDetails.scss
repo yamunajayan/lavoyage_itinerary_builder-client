@@ -1,0 +1,17 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.country-details {
+  padding: $mobile-padding-header $mobile-padding;
+  @include tablet {
+    padding: $tablet-padding-side;
+  }
+  @include desktop {
+    max-width: $desktop-max-width;
+    margin: 0 auto;
+  }
+
+  &__description {
+    // font-style: italic;
+  }
+}
