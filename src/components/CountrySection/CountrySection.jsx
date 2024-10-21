@@ -8,6 +8,7 @@ import indiaImage from "../../assets/photos/India-1.avif";
 import baliImage from "../../assets/photos/Bali-1.webp";
 import chevronRight from "../../assets/logos/chevron-right.svg";
 import chevronLeft from "../../assets/logos/chevron-left.svg";
+import { Link } from "react-router-dom";
 
 const CountrySection = () => {
   const countryNames = [
@@ -33,10 +34,12 @@ const CountrySection = () => {
         {countryNames.map((country, index) => {
           return (
             <li key={country} className="country-section__item">
-              <CountryCard
-                countryName={country}
-                countryImage={countryImages[index]}
-              />
+              <Link to={`/countries/${country}`}>
+                <CountryCard
+                  countryName={country}
+                  countryImage={countryImages[index]}
+                />
+              </Link>
             </li>
           );
         })}

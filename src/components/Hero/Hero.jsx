@@ -1,6 +1,7 @@
 import "./Hero.scss";
 import searchLogo from "../../assets/logos/search.svg";
 import { useState, useEffect } from "react";
+import Header from "../Header/Header";
 
 const Hero = () => {
   const images = [
@@ -34,7 +35,7 @@ const Hero = () => {
 
     const interval = setInterval(changeBackground, 10000);
     return () => clearInterval(interval);
-  }, [images]);
+  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -54,6 +55,7 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
+      <Header />
       <h1 className="hero__title">{messages[currentMessageIndex]}</h1>
       <form id="inputWrapper" className="hero__search">
         <img
