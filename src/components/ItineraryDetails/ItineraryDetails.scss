@@ -1,0 +1,68 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+.itinerary-details {
+  padding: $mobile-padding;
+
+  &__title {
+    text-align: center;
+    padding: $mobile-padding 0;
+  }
+
+  &__container {
+    position: relative;
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  &__bubble {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: $color-ocean-blue;
+    color: $color-cloud-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: $mobile-subheader-font-weight;
+    position: relative;
+  }
+
+  &__horizontal-line {
+    position: absolute;
+    right: -1.25rem;
+    top: 50%;
+    width: 1.25rem;
+    height: 0.125rem;
+    border-top: 0.125rem dotted $color-ocean-blue;
+    // z-index: 2;
+  }
+
+  &__day-info {
+    margin-left: 1.25rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: $border-radius;
+    padding: 1rem;
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $mobile-padding;
+  }
+
+  &__vertical-line {
+    position: absolute;
+    left: 1.5rem;
+    top: 3rem;
+    bottom: -3rem;
+    width: 2px;
+    background-color: $color-ocean-blue;
+  }
+}

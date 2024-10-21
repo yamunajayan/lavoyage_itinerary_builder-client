@@ -101,7 +101,7 @@
   padding: $mobile-padding;
   border-radius: calc($border-radius * 2);
   border: none;
-  background-color: $color-primary-button;
+  background-color: $color-sunset-orange;
   color: $color-primary-white;
   @include tablet {
     @include tablet-button;

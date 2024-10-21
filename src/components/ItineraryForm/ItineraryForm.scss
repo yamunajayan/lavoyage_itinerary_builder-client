@@ -9,6 +9,7 @@
   padding: calc($mobile-padding * 2) $mobile-padding;
   gap: $mobile-padding;
   background-color: #9db9db;
+  background-color: $color-sand-beige;
 
   @include tablet {
     flex-direction: row;
