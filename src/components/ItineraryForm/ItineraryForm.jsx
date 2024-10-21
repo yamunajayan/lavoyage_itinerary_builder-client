@@ -1,5 +1,8 @@
 import "./ItineraryForm.scss";
+import { Link, useParams } from "react-router-dom";
 const ItineraryForm = () => {
+  const { countryName } = useParams();
+  console.log(countryName);
   const months = [
     "January",
     "February",
@@ -34,7 +37,9 @@ const ItineraryForm = () => {
           </option>
         ))}
       </select>
-      <button>Build Itinerary</button>
+      <Link to={`/countries/${countryName}/itinerary`}>
+        <button type="submit">Build Itinerary</button>
+      </Link>
     </form>
   );
 };
