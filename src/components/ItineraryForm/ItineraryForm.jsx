@@ -2,7 +2,6 @@ import "./ItineraryForm.scss";
 import { Link, useParams } from "react-router-dom";
 const ItineraryForm = () => {
   const { countryName } = useParams();
-  console.log(countryName);
   const months = [
     "January",
     "February",
