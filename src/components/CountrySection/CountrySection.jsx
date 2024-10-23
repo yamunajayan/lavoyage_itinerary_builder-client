@@ -9,35 +9,56 @@ import baliImage from "../../assets/photos/Bali-1.webp";
 import chevronRight from "../../assets/logos/chevron-right.svg";
 import chevronLeft from "../../assets/logos/chevron-left.svg";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const CountrySection = () => {
-  const countryNames = [
-    "ITALY",
-    "THAILAND",
-    "INDIA",
-    "EGYPT",
-    "BALI",
-    "FRANCE",
-  ];
-  const countryImages = [
-    italyImage,
-    thailandImage,
-    indiaImage,
-    egyptImage,
-    baliImage,
-    franceImage,
-  ];
+  const [countriesArray, setCountriesArray] = useState([]);
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  //   const countryNames = [
+  //     "ITALY",
+  //     "THAILAND",
+  //     "INDIA",
+  //     "EGYPT",
+  //     "BALI",
+  //     "FRANCE",
+  //   ];
+  //   const countryImages = [
+  //     italyImage,
+  //     thailandImage,
+  //     indiaImage,
+  //     egyptImage,
+  //     baliImage,
+  //     franceImage,
+  //   ];
+
+  useEffect(() => {
+    const getAllCountries = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/countries`);
+        setCountriesArray(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getAllCountries();
+  }, []);
+
+  if (countriesArray) {
+    console.log(countriesArray);
+  }
+
   return (
     <section className="country-section">
       <h2 className="country-title">Most Popular Travel Destinations</h2>
       <ul className="country-section__list">
-        {countryNames.map((country, index) => {
+        {countriesArray.map((country) => {
           return (
-            <li key={country} className="country-section__item">
-              <Link to={`/countries/${country}`}>
+            <li key={country.id} className="country-section__item">
+              <Link to={`/countries/${country.country_name}`}>
                 <CountryCard
-                  countryName={country}
-                  countryImage={countryImages[index]}
+                  countryName={country.country_name}
+                  countryImage={country.country_image}
                 />
               </Link>
             </li>
