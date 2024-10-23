@@ -8,10 +8,19 @@
     padding: $mobile-padding 0;
   }
 
-  &__container {
+  &__list {
     position: relative;
     @include tablet {
       width: 50%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: $mobile-padding;
+    @include tablet {
+      flex-direction: row;
     }
   }
 
@@ -64,5 +73,12 @@
     bottom: -3rem;
     width: 2px;
     background-color: $color-ocean-blue;
+  }
+
+  &__map {
+    @include tablet {
+      flex: 1;
+      width: 40%;
+    }
   }
 }
