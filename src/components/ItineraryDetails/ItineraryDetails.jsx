@@ -1,13 +1,16 @@
 import "./ItineraryDetails.scss";
-import { useState } from "react";
-import { italyTrip } from "../../utils/countryItineraryDetails";
 import MapComponent from "../MapComponent/MapComponent";
 
-const ItineraryDetails = ({ countryName }) => {
-  console.log(italyTrip);
-  const countryItinerary = italyTrip.itinerary;
-  console.log(countryItinerary);
-  const [itinerary, setItinerary] = useState(countryItinerary);
+const ItineraryDetails = ({
+  itineraryList,
+  countryName,
+  selectedMarkers,
+  countryCoordinates,
+}) => {
+  // const countryItinerary = itineraryObject.itinerary;
+  console.log(itineraryList);
+  console.log(selectedMarkers);
+
   return (
     <section className="itinerary-details">
       <h2 className="itinerary-details__title">
@@ -15,7 +18,7 @@ const ItineraryDetails = ({ countryName }) => {
       </h2>
       <div className="itinerary-details__container">
         <ul className="itinerary-details__list">
-          {itinerary.map((item, index) => (
+          {itineraryList.map((item, index) => (
             <li key={item.day} className="itinerary-details__item">
               <div className="itinerary-details__bubble">
                 {item.day}
@@ -28,14 +31,17 @@ const ItineraryDetails = ({ countryName }) => {
                   <strong>Transportation:</strong> {item.transportation}
                 </p>
               </article>
-              {index < itinerary.length - 1 && (
+              {index < itineraryList.length - 1 && (
                 <div className="itinerary-details__vertical-line" />
               )}
             </li>
           ))}
         </ul>
         <div className="itinerary-details__map">
-          <MapComponent />
+          <MapComponent
+            selectedMarkers={selectedMarkers}
+            countryCoordinates={countryCoordinates}
+          />
         </div>
       </div>
     </section>

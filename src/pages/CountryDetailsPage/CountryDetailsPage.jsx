@@ -17,7 +17,6 @@ const CountryDetailsPage = () => {
         const response = await axios.get(
           `${BASE_URL}/countries/${countryName}`
         );
-        console.log(response.data);
         setSelectedCountry(response.data);
       } catch (error) {
         console.error(error);
