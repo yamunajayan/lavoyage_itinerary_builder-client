@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import italyImage from "../../assets/photos/italy-2.avif";
 
-const CountryHero = ({ countryName }) => {
+const CountryHero = ({ countryName, countryImage }) => {
   return (
     <section
       className="country-hero"
       style={{
-        backgroundImage: `url(${italyImage})`,
+        backgroundImage: `url(${countryImage})`,
         height: "70vh",
         backgroundSize: "cover",
         backgroundPosition: "center",
