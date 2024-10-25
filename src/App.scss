@@ -9,8 +9,8 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-family: sans-serif;
+  font-family: "Lora", "Lato", sans-serif;
+  // font-family: sans-serif;
 }
 
 h1 {
@@ -56,9 +56,15 @@ a {
 
 button {
   @include button;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 input,
 select {
   @include input;
+  &:hover {
+    cursor: pointer;
+  }
 }

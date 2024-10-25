@@ -25,11 +25,15 @@ const MapComponent = ({ selectedMarkers, countryCoordinates }) => {
 
   return (
     <div className="map-component">
-      <iframe
-        src={mapUrl}
-        className="map-component__image"
-        title="Map of Italy"
-      />
+      {mapUrl ? (
+        <iframe
+          src={mapUrl}
+          className="map-component__image"
+          title="Map of Italy"
+        />
+      ) : (
+        <p>Loading map...</p> // Show loading message until mapUrl is ready
+      )}
     </div>
   );
 };

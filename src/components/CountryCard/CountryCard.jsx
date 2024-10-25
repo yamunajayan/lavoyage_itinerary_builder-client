@@ -9,7 +9,7 @@ const CountryCard = ({ countryName, countryImage }) => {
         className="country-card__image"
       />
       <div className="country-card__details">
-        <h3 className="country-card__title">{countryName}</h3>
+        <h3 className="country-card__title">{countryName.toUpperCase()}</h3>
       </div>
     </article>
   );

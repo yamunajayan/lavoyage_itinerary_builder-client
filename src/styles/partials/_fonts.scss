@@ -9,3 +9,31 @@
 //   src: url(/src/assets/fonts/TitilliumWeb-SemiBold.ttf) format("truetype");
 //   font-weight: 600;
 // }
+
+@font-face {
+  font-family: "Lora";
+  src: url(/src/assets/fonts/Lato-Lora/Lora/static/Lora-Regular.ttf)
+    format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url(/src/assets/fonts/Lato-Lora/Lora/static/Lora-Medium.ttf)
+    format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url(/src/assets/fonts/Lato-Lora/Lora/static/Lora-SemiBold.ttf)
+    format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url(/src/assets/fonts/Lato-Lora/Lora/static/Lora-Bold.ttf)
+    format("truetype");
+  font-weight: 700;
+}

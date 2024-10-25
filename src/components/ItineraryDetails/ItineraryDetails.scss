@@ -64,6 +64,7 @@
     display: flex;
     flex-direction: column;
     gap: $mobile-padding;
+    box-shadow: -2px -2px 4px $color-ocean-blue;
   }
 
   &__vertical-line {
@@ -80,5 +81,9 @@
       flex: 1;
       width: 40%;
     }
+  }
+  &__heading {
+    color: $color-ocean-blue;
+    font-weight: 700;
   }
 }

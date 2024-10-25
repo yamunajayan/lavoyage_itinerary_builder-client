@@ -14,4 +14,41 @@
   &__description {
     // font-style: italic;
   }
+
+  &__budget {
+    padding: $mobile-padding 0;
+    // background-color: $color-sand-beige;
+    color: $color-primary-indigo;
+  }
+
+  &__best-months {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $mobile-padding;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__months-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $mobile-padding;
+  }
+
+  &__best-month {
+    // width: 6rem;
+    text-align: center;
+    // border: 1px solid $color-primary-indigo;
+    padding: calc($mobile-padding/2) $mobile-padding;
+    border-radius: $border-radius;
+    background-color: $color-sand-beige;
+    background-color: $color-sunset-orange;
+    color: $color-cloud-white;
+  }
+
+  &__loading-image--noshow {
+    display: none;
+  }
 }
