@@ -17,7 +17,7 @@ const CountryHero = ({ countryName, countryImage }) => {
     >
       <Header />
       {/* <h1 className="hero__title">{messages[currentMessageIndex]}</h1> */}
-      <h1 className="country-hero__title">{countryName}</h1>
+      <h1 className="country-hero__title">{countryName.toUpperCase()}</h1>
     </section>
   );
 };

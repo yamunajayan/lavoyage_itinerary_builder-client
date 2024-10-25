@@ -3,7 +3,7 @@ import searchLogo from "../../assets/logos/search.svg";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 
-const Hero = () => {
+const Hero = ({ countriesArray }) => {
   const images = [
     "url(src/assets/photos/beach-1.webp)",
     "url(src/assets/photos/beach-2.jpeg)",
@@ -55,7 +55,7 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      <Header />
+      <Header countriesArray={countriesArray} />
       <h1 className="hero__title">{messages[currentMessageIndex]}</h1>
       <form id="inputWrapper" className="hero__search">
         <img
