@@ -1,8 +1,7 @@
 import "./Header.scss";
 import headerLogos from "../../assets/logos/laVoyage.svg";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Header = ({ countriesArray }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,7 +16,6 @@ const Header = ({ countriesArray }) => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        // Change the number as needed
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -43,13 +41,15 @@ const Header = ({ countriesArray }) => {
   return (
     <header className={scrolled ? "header header--scrolled" : "header"}>
       <div className="header__box">
-        <div className="header__logo-box">
-          <img
-            src={headerLogos}
-            alt="header logo"
-            className="header__logo-image"
-          />
-        </div>
+        <Link to="/">
+          <div className="header__logo-box">
+            <img
+              src={headerLogos}
+              alt="header logo"
+              className="header__logo-image"
+            />
+          </div>
+        </Link>
         <nav className="header__nav">
           <ul className="header__list">
             <li className="header__item">
@@ -62,9 +62,9 @@ const Header = ({ countriesArray }) => {
                 {isDropdownVisible && (
                   <ul className="header__dropdown-menu">
                     {destinationsList.map((destination, index) => (
-                      <li key={index} className="header__dropdown-item">
-                        {destination}
-                      </li>
+                      <Link key={index} to={`/countries/${destination}`}>
+                        <li className="header__dropdown-item">{destination}</li>
+                      </Link>
                     ))}
                   </ul>
                 )}

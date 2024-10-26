@@ -29,8 +29,12 @@
     background-color: $color-primary-white;
     width: 90%;
     margin-bottom: 2rem;
+    &--error {
+      margin-bottom: 0;
+      border: 0.125rem solid red;
+    }
     &:focus-within {
-      border-color: $color-primary-indigo;
+      border-color: $color-sand-beige;
     }
 
     @include tablet {
@@ -41,5 +45,12 @@
   &__input {
     outline: none;
     border: none;
+  }
+
+  &__error-box {
+    display: flex;
+    color: red;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 $mobile-padding $mobile-padding;
   }
 }

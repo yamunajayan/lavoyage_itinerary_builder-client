@@ -15,8 +15,10 @@ const CountryDetails = ({ selectedCountry }) => {
   const [showLoading, setShowLoading] = useState(false);
 
   const getItineraryDetails = async (updatedItineraryObject) => {
-    // scrollToDiv();
-    // setShowLoading(true);
+    setItineraryList([]);
+    scrollToDiv();
+    setShowLoading(true);
+    console.log(updatedItineraryObject);
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     try {
       const response = await axios.post(
@@ -32,8 +34,24 @@ const CountryDetails = ({ selectedCountry }) => {
   };
 
   const scrollToDiv = () => {
-    targetDivRef.current.scrollIntoView({ behavior: "smooth" });
+    // targetDivRef.current.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({
+      top: 2500,
+      behavior: "smooth",
+    });
   };
+
+  function scrollToTargetAdjusted() {
+    var element = document.getElementById("targetElement");
+    var headerOffset = 45;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
 
   useEffect(() => {
     setCountryCoordinates({
@@ -42,7 +60,7 @@ const CountryDetails = ({ selectedCountry }) => {
     });
   }, [selectedCountry]);
 
-  console.log(countryCoordinates);
+  //   console.log(countryCoordinates);
 
   return (
     <section className="country-details">

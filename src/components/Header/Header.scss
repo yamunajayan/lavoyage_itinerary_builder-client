@@ -40,7 +40,7 @@
   }
   &__logo-image {
     height: $mobile-logo-size;
-    width: $mobile-logo-size;
+    width: calc(2 * $mobile-logo-size);
   }
 
   &__list {
@@ -53,6 +53,7 @@
     @include tablet {
       margin: 0;
       gap: $tablet-padding;
+      padding-top: 0;
       // width: 20rem;
     }
   }
@@ -61,13 +62,14 @@
     @include tablet-nav-items;
     font-weight: 600;
     position: relative;
-    // width: 33.3%;
     padding: 0.25rem 1rem;
     border-radius: $border-radius;
     border: 2px solid $color-sunset-orange;
     text-align: center;
     &:hover {
       cursor: pointer;
+      background-color: $color-sunset-orange;
+      color: $color-cloud-white;
     }
   }
 
@@ -75,6 +77,7 @@
     position: absolute;
     background-color: black;
     opacity: 0.5;
+    margin-top: 0.3rem;
     // left: 40px;
     text-align: center;
   }

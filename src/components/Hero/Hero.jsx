@@ -1,6 +1,8 @@
 import "./Hero.scss";
 import searchLogo from "../../assets/logos/search.svg";
-import { useState, useEffect } from "react";
+import errorLogo from "../../assets/logos/error-24px.svg";
+import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 
 const Hero = ({ countriesArray }) => {
@@ -23,6 +25,9 @@ const Hero = ({ countriesArray }) => {
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const formRef = useRef();
+  const navigate = useNavigate();
+  const [searchError, setSearchError] = useState(false);
 
   useEffect(() => {
     const changeBackground = () => {
@@ -45,6 +50,32 @@ const Hero = ({ countriesArray }) => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const searchValue = formRef.current.search.value;
+    if (!searchValue) {
+      setSearchError(true);
+    } else {
+      const found = countriesArray.some(
+        (country) => country.country_name.toLowerCase() === searchValue
+      );
+      if (found) {
+        setSearchError(false);
+        console.log(searchValue);
+        navigate(`/countries/${searchValue}`);
+      } else {
+        console.log("Enter a valid country name");
+        setSearchError(true);
+      }
+    }
+  };
+
+  const handleInputChange = (event) => {
+    if (!event.target.value) {
+      setSearchError(false);
+    }
+  };
+
   return (
     <section
       className="hero"
@@ -57,7 +88,12 @@ const Hero = ({ countriesArray }) => {
     >
       <Header countriesArray={countriesArray} />
       <h1 className="hero__title">{messages[currentMessageIndex]}</h1>
-      <form id="inputWrapper" className="hero__search">
+      <form
+        id="inputWrapper"
+        className={`hero__search ${searchError ? "hero__search--error" : ""}`}
+        onSubmit={handleSearch}
+        ref={formRef}
+      >
         <img
           src={searchLogo}
           alt="search logo"
@@ -65,10 +101,20 @@ const Hero = ({ countriesArray }) => {
         />
         <input
           name="search"
-          placeholder="Search"
+          placeholder="Search any country"
           className="hero__input"
+          onChange={handleInputChange}
         ></input>
       </form>
+      {searchError && (
+        <div className="hero__error-box">
+          <img src={errorLogo} alt="error logo" />
+          <p>
+            Sorry the country entered is not in our database, please choose from
+            list below
+          </p>
+        </div>
+      )}
     </section>
   );
 };
