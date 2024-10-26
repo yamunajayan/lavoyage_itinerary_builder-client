@@ -20,9 +20,6 @@ const HomePage = () => {
     getAllCountries();
   }, []);
 
-  if (countriesArray) {
-    console.log(countriesArray);
-  }
   return (
     <>
       <Hero countriesArray={countriesArray} />
