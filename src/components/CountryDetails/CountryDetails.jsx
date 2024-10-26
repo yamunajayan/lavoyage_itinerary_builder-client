@@ -16,7 +16,6 @@ const CountryDetails = ({ selectedCountry }) => {
 
   const getItineraryDetails = async (updatedItineraryObject) => {
     setItineraryList([]);
-    scrollToDiv();
     setShowLoading(true);
     console.log(updatedItineraryObject);
     const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -33,19 +32,11 @@ const CountryDetails = ({ selectedCountry }) => {
     }
   };
 
-  const scrollToDiv = () => {
-    // targetDivRef.current.scrollIntoView({ behavior: "smooth" });
-    window.scrollTo({
-      top: 2500,
-      behavior: "smooth",
-    });
-  };
-
   function scrollToTargetAdjusted() {
-    var element = document.getElementById("targetElement");
-    var headerOffset = 45;
+    var element = document.getElementById("target-div");
+    var headerOffset = 60;
     var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    var offsetPosition = elementPosition + window.scrollY - headerOffset;
 
     window.scrollTo({
       top: offsetPosition,
@@ -60,7 +51,11 @@ const CountryDetails = ({ selectedCountry }) => {
     });
   }, [selectedCountry]);
 
-  //   console.log(countryCoordinates);
+  useEffect(() => {
+    if (showLoading) {
+      scrollToTargetAdjusted();
+    }
+  }, [showLoading]);
 
   return (
     <section className="country-details">
