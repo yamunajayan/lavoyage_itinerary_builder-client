@@ -7,18 +7,11 @@ const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
   const [selectedCities, setSelectedCities] = useState([]);
   const [markerList, setMarkeList] = useState([]);
 
-//   const markers = [
-//     { lat: 41.9028, lon: 12.4964, name: "Rome" }, // Rome
-//     { lat: 43.7696, lon: 11.2558, name: "Florence" }, // Florence
-//     { lat: 45.4408, lon: 12.3155, name: "Venice" }, // Venice
-//   ];
-
   const getItineraryQuery = (itineraryFormObject) => {
     const updatedItineraryObject = {
       ...itineraryFormObject,
       cities_included: selectedCities,
     };
-    console.log(updatedItineraryObject);
     getItineraryDetails(updatedItineraryObject);
     setSelectedMarkers(markerList);
   };
@@ -46,8 +39,6 @@ const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
           (marker) => marker.name.toLowerCase() !== city.city_name.toLowerCase()
         )
       );
-      console.log(markerList);
-      console.log(selectedCities);
     }
   };
 
@@ -97,6 +88,7 @@ const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
           })}
         </ul>
       )}
+      <hr />
     </section>
   );
 };

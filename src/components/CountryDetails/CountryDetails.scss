@@ -11,10 +11,28 @@
     margin: 0 auto;
   }
 
-  &__budget {
+  &__description {
+    padding-bottom: $tablet-padding;
+  }
+
+  &__budget-box {
     padding: $mobile-padding 0;
-    // background-color: $color-sand-beige;
-    color: $color-primary-indigo;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__budget-text {
+    color: $color-ocean-blue;
+  }
+
+  &__budget {
+    padding: calc($mobile-padding/2) $mobile-padding;
+    color: $color-cloud-white;
+    background-color: $color-ocean-blue;
+    border: 2px solid $color-ocean-blue;
+    border-radius: $border-radius;
+    margin-left: $mobile-padding;
   }
 
   &__best-months {
@@ -22,6 +40,7 @@
     flex-direction: column;
     align-items: center;
     gap: $mobile-padding;
+    margin-bottom: calc(2 * $mobile-padding);
     @include tablet {
       flex-direction: row;
     }
@@ -34,9 +53,7 @@
   }
 
   &__best-month {
-    // width: 6rem;
     text-align: center;
-    // border: 1px solid $color-primary-indigo;
     padding: calc($mobile-padding/2) $mobile-padding;
     border-radius: $border-radius;
     background-color: $color-sand-beige;

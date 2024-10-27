@@ -54,7 +54,9 @@ const ItineraryForm = ({ getItineraryQuery }) => {
           </option>
         ))}
       </select>
-      <button type="submit">Build Itinerary</button>
+      <button type="submit" className="itinerary-form__button">
+        Build Itinerary
+      </button>
     </form>
   );
 };

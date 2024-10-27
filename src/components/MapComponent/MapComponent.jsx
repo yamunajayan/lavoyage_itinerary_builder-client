@@ -2,7 +2,9 @@ import React from "react";
 import "./MapComponent.scss";
 
 const MapComponent = ({ selectedMarkers, countryCoordinates }) => {
-  const geoapifyApiKey = "4138f9d5e5b6483e9d95406e0cb805f6";
+  // const geoapifyApiKey = "4138f9d5e5b6483e9d95406e0cb805f6";
+  const geoapifyApiKey = import.meta.env.VITE_GEOAPIFY_API_KEY;
+  console.log(geoapifyApiKey);
   const mapStyle = "osm-bright";
 
   console.log(countryCoordinates);

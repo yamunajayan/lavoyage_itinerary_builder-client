@@ -17,7 +17,6 @@ const CountryDetails = ({ selectedCountry }) => {
   const getItineraryDetails = async (updatedItineraryObject) => {
     setItineraryList([]);
     setShowLoading(true);
-    console.log(updatedItineraryObject);
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     try {
       const response = await axios.post(
@@ -63,9 +62,11 @@ const CountryDetails = ({ selectedCountry }) => {
         <h4 className="country-details__description">
           " {selectedCountry.country_description} "
         </h4>
-        <div className="">
+        <div className="country-details__budget-box">
+          <h4 className="country-details__budget-text">
+            Approximate budget for 7 day travel :{" "}
+          </h4>
           <h4 className="country-details__budget">
-            Approximate budget for 7 day travel :
             {selectedCountry.budget_7_days_usd}
           </h4>
         </div>
@@ -82,6 +83,7 @@ const CountryDetails = ({ selectedCountry }) => {
               </div>
             )}
         </div>
+        <hr />
       </div>
       <CityDetails
         cities={selectedCountry.cities}

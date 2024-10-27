@@ -36,6 +36,9 @@ h3 {
 
 h4 {
   @include mobile-body-large;
+  @include tablet {
+    @include tablet-body-large;
+  }
 }
 
 p {
@@ -67,4 +70,10 @@ select {
   &:hover {
     cursor: pointer;
   }
+}
+
+hr {
+  height: 2px;
+  border: none;
+  background-color: $color-slate-gray;
 }

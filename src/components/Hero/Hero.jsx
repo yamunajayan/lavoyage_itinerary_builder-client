@@ -61,10 +61,8 @@ const Hero = ({ countriesArray }) => {
       );
       if (found) {
         setSearchError(false);
-        console.log(searchValue);
         navigate(`/countries/${searchValue}`);
       } else {
-        console.log("Enter a valid country name");
         setSearchError(true);
       }
     }

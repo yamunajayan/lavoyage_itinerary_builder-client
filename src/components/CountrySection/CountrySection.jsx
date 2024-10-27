@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 const CountrySection = ({ countriesArray }) => {
   return (
     <section className="country-section">
-      <h2 className="country-title">Most Popular Travel Destinations</h2>
+      <h2 className="country-section__title">
+        Most Popular Travel Destinations
+      </h2>
       <ul className="country-section__list">
         {countriesArray.map((country) => {
           return (

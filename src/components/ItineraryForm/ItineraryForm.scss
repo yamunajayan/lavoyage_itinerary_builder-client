@@ -16,6 +16,14 @@
   }
 
   &__input {
-    flex: 1;
+    // flex: 1;
+    @include tablet {
+      width: 50%;
+    }
+  }
+  &__button {
+    @include tablet {
+      width: 55%;
+    }
   }
 }

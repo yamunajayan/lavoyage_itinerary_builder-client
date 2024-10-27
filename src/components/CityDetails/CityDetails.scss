@@ -16,9 +16,13 @@
     margin: 0 auto;
   }
 
+  &__itinerary {
+    margin-bottom: $mobile-padding-header;
+  }
+
   &__title {
     text-align: center;
-    padding: $mobile-padding 0;
+    padding: 0 0$mobile-padding;
   }
 
   &__list {
