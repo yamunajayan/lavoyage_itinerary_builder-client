@@ -16,10 +16,14 @@
   }
 
   &__budget-box {
-    padding: $mobile-padding 0;
+    padding-bottom: $mobile-padding;
     display: flex;
-    flex-wrap: wrap;
+    gap: $mobile-padding;
+    flex-direction: column;
     align-items: center;
+    @include tablet {
+      flex-direction: row;
+    }
   }
 
   &__budget-text {

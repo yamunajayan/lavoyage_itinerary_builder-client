@@ -103,9 +103,9 @@
   border: none;
   background-color: $color-sunset-orange;
   color: $color-primary-white;
-  @include tablet {
-    @include tablet-button;
-  }
+  // @include tablet {
+  //   @include tablet-button;
+  // }
 }
 
 @mixin input {
@@ -113,7 +113,7 @@
   padding: $mobile-padding;
   border-radius: calc($border-radius * 2);
   border: none;
-  @include tablet {
-    @include tablet-button;
-  }
+  // @include tablet {
+  //   @include tablet-button;
+  // }
 }

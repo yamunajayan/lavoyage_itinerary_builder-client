@@ -50,9 +50,9 @@ const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
         </h2>
         <ItineraryForm getItineraryQuery={getItineraryQuery} />
       </article>
-      <h2 className="city-details__title">
+      <h3 className="city-details__title">
         Select the cities you want to visit
-      </h2>
+      </h3>
       {cities && cities.length > 0 && (
         <ul className="city-details__list">
           {cities.map((city) => {

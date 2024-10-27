@@ -71,7 +71,7 @@ const CountryDetails = ({ selectedCountry }) => {
           </h4>
         </div>
         <div className="country-details__best-months">
-          <h3>Best months to visit:</h3>
+          <h4>Best months to visit:</h4>
           {selectedCountry.best_months_to_visit &&
             selectedCountry.best_months_to_visit.length > 0 && (
               <div className="country-details__months-container">
