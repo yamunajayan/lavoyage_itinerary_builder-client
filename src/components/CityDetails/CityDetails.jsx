@@ -2,25 +2,27 @@ import "./CityDetails.scss";
 import CountryCard from "../countryCard/countryCard";
 import { useState } from "react";
 import ItineraryForm from "../ItineraryForm/ItineraryForm";
+import errorLogo from "../../assets/logos/error-24px.svg";
 
 const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
   const [selectedCities, setSelectedCities] = useState([]);
   const [markerList, setMarkeList] = useState([]);
-
-//   const markers = [
-//     { lat: 41.9028, lon: 12.4964, name: "Rome" }, // Rome
-//     { lat: 43.7696, lon: 11.2558, name: "Florence" }, // Florence
-//     { lat: 45.4408, lon: 12.3155, name: "Venice" }, // Venice
-//   ];
+  const [error, setError] = useState("");
 
   const getItineraryQuery = (itineraryFormObject) => {
-    const updatedItineraryObject = {
-      ...itineraryFormObject,
-      cities_included: selectedCities,
-    };
-    console.log(updatedItineraryObject);
-    getItineraryDetails(updatedItineraryObject);
-    setSelectedMarkers(markerList);
+    if (selectedCities.length === 0) {
+      //   alert("select atleast one city");
+      setError("Please setect atleast one city");
+      return;
+    } else {
+      setError("");
+      const updatedItineraryObject = {
+        ...itineraryFormObject,
+        cities_included: selectedCities,
+      };
+      getItineraryDetails(updatedItineraryObject);
+      setSelectedMarkers(markerList);
+    }
   };
 
   const handleCitySelection = (event, city) => {
@@ -46,8 +48,6 @@ const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
           (marker) => marker.name.toLowerCase() !== city.city_name.toLowerCase()
         )
       );
-      console.log(markerList);
-      console.log(selectedCities);
     }
   };
 
@@ -59,9 +59,15 @@ const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
         </h2>
         <ItineraryForm getItineraryQuery={getItineraryQuery} />
       </article>
-      <h2 className="city-details__title">
+      {error && (
+        <div className="city-details__error-box">
+          <img src={errorLogo} alt="error logo" />
+          <h4 className="city-details__error">{error}</h4>
+        </div>
+      )}
+      <h3 className="city-details__title">
         Select the cities you want to visit
-      </h2>
+      </h3>
       {cities && cities.length > 0 && (
         <ul className="city-details__list">
           {cities.map((city) => {
@@ -97,6 +103,7 @@ const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
           })}
         </ul>
       )}
+      <hr />
     </section>
   );
 };

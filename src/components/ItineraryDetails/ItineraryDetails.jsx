@@ -7,10 +7,6 @@ const ItineraryDetails = ({
   selectedMarkers,
   countryCoordinates,
 }) => {
-  // const countryItinerary = itineraryObject.itinerary;
-  console.log(itineraryList);
-  console.log(selectedMarkers);
-
   return (
     <section className="itinerary-details">
       {itineraryList && itineraryList.length > 0 ? (

@@ -1,10 +1,9 @@
 import "./CountryDetailsPage.scss";
 import { useParams } from "react-router-dom";
-import Hero from "../../components/Hero/Hero";
 import CountryHero from "../../components/CountryHero/CountryHero";
 import CountryDetails from "../../components/CountryDetails/CountryDetails";
 import axios from "axios";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const CountryDetailsPage = () => {
   const { countryName } = useParams();

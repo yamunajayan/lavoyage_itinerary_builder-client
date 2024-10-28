@@ -29,12 +29,15 @@
     background-color: $color-primary-white;
     width: 90%;
     margin-bottom: 2rem;
+    &:focus-within {
+      border-color: $color-sand-beige;
+    }
     &--error {
       margin-bottom: 0;
       border: 0.125rem solid red;
-    }
-    &:focus-within {
-      border-color: $color-sand-beige;
+      &:focus-within {
+        border-color: red;
+      }
     }
 
     @include tablet {

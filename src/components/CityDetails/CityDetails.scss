@@ -16,9 +16,13 @@
     margin: 0 auto;
   }
 
+  &__itinerary {
+    margin-bottom: $mobile-padding-header;
+  }
+
   &__title {
     text-align: center;
-    padding: $mobile-padding 0;
+    padding: 0 0$mobile-padding;
   }
 
   &__list {
@@ -32,11 +36,12 @@
   &__item {
     width: 100%;
     display: flex;
-    border: 2px solid #545b77;
     border-radius: $border-radius;
-    box-shadow: 2px 2px 2px #545b77;
+    box-shadow: 2px 2px 10px $color-slate-gray;
     &:hover {
-      transform: scale(0.9);
+      //   transform: scale(0.95);
+      //   border: 2px solid $color-ocean-blue;
+      box-shadow: 2px 2px 15px $color-ocean-blue;
     }
     @include desktop {
       width: 49%;
@@ -66,7 +71,7 @@
 
   &__info {
     &--days {
-      color: $color-primary-indigo;
+      color: $color-ocean-blue;
       font-weight: 600;
     }
   }
@@ -80,5 +85,13 @@
   &__input {
     width: 1.5rem;
     height: 1.5rem;
+  }
+
+  &__error-box {
+    display: flex;
+  }
+
+  &__error {
+    color: red;
   }
 }

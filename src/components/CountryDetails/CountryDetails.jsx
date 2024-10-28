@@ -16,36 +16,25 @@ const CountryDetails = ({ selectedCountry }) => {
 
   const getItineraryDetails = async (updatedItineraryObject) => {
     setItineraryList([]);
-    scrollToDiv();
     setShowLoading(true);
-    console.log(updatedItineraryObject);
     const BASE_URL = import.meta.env.VITE_BASE_URL;
     try {
       const response = await axios.post(
         `${BASE_URL}/countries/${countryName}`,
         updatedItineraryObject
       );
-      console.log(response.data);
       setItineraryList(response.data.itinerary);
-      console.log(response.data.itinerary);
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const scrollToDiv = () => {
-    // targetDivRef.current.scrollIntoView({ behavior: "smooth" });
-    window.scrollTo({
-      top: 2500,
-      behavior: "smooth",
-    });
+    setShowLoading(false);
   };
 
   function scrollToTargetAdjusted() {
-    var element = document.getElementById("targetElement");
-    var headerOffset = 45;
+    var element = document.getElementById("target-div");
+    var headerOffset = 60;
     var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    var offsetPosition = elementPosition + window.scrollY - headerOffset;
 
     window.scrollTo({
       top: offsetPosition,
@@ -60,7 +49,11 @@ const CountryDetails = ({ selectedCountry }) => {
     });
   }, [selectedCountry]);
 
-  //   console.log(countryCoordinates);
+  useEffect(() => {
+    if (showLoading) {
+      scrollToTargetAdjusted();
+    }
+  }, [showLoading]);
 
   return (
     <section className="country-details">
@@ -68,14 +61,16 @@ const CountryDetails = ({ selectedCountry }) => {
         <h4 className="country-details__description">
           " {selectedCountry.country_description} "
         </h4>
-        <div className="">
+        <div className="country-details__budget-box">
+          <h4 className="country-details__budget-text">
+            Approximate budget for 7 day travel :{" "}
+          </h4>
           <h4 className="country-details__budget">
-            Approximate budget for 7 day travel :
             {selectedCountry.budget_7_days_usd}
           </h4>
         </div>
         <div className="country-details__best-months">
-          <h3>Best months to visit:</h3>
+          <h4>Best months to visit:</h4>
           {selectedCountry.best_months_to_visit &&
             selectedCountry.best_months_to_visit.length > 0 && (
               <div className="country-details__months-container">
@@ -87,6 +82,7 @@ const CountryDetails = ({ selectedCountry }) => {
               </div>
             )}
         </div>
+        <hr />
       </div>
       <CityDetails
         cities={selectedCountry.cities}

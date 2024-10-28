@@ -14,7 +14,7 @@ const HomePage = () => {
         const response = await axios.get(`${BASE_URL}/countries`);
         setCountriesArray(response.data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
     getAllCountries();
