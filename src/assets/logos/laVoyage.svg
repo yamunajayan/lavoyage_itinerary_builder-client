@@ -1,0 +1,11 @@
+<svg viewBox="0 0 300 35" xmlns="http://www.w3.org/2000/svg">
+    <!-- Main text -->
+    <text x="150" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="56" fill="#f77f00">
+        La<tspan font-size="62">V</tspan>oyage
+    </text>
+    
+    <!-- Subtext -->
+    <!-- <text x="150" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#f77f00" font-style="italic">
+        make travel easy
+    </text> -->
+</svg>

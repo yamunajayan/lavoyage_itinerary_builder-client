@@ -1,0 +1,119 @@
+@use "./variables" as *;
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin mobile-page-header {
+  font-size: $mobile-font-size-h1;
+  font-weight: $mobile-page-header-font-weight;
+  line-height: $mobile-line-height-h1;
+}
+
+@mixin mobile-sub-header {
+  font-size: $mobile-font-size-h3;
+  font-weight: $mobile-page-header-font-weight;
+  line-height: $mobile-line-height-h3;
+}
+
+@mixin mobile-section-header {
+  font-size: $mobile-font-size-h2;
+  font-weight: $mobile-subheader-font-weight;
+  line-height: $mobile-line-height-h2;
+}
+
+@mixin mobile-body-large {
+  font-size: $mobile-font-size-h4;
+  font-weight: $mobile-subheader-font-weight;
+  line-height: $mobile-line-height-h4;
+}
+
+@mixin mobile-body {
+  font-size: $mobile-font-size-p;
+  font-weight: $mobile-body-font-weight;
+  line-height: $mobile-line-height-p;
+}
+
+// @mixin mobile-body-small {
+//   font-size: $mobile-font-size-p-small;
+//   font-weight: $mobile-subheader-font-weight;
+//   line-height: $mobile-line-height-p;
+// }
+
+@mixin mobile-button {
+  font-size: $mobile-font-size-h4;
+  font-weight: $mobile-subheader-font-weight;
+  line-height: $mobile-line-height-h4;
+}
+
+@mixin tablet-page-header {
+  font-size: $tablet-font-size-h1;
+  font-weight: $tablet-page-header-font-weight;
+  line-height: $tablet-line-height-h1;
+}
+
+@mixin tablet-section-header {
+  font-size: $tablet-font-size-h2;
+  font-weight: $tablet-page-header-font-weight;
+  line-height: $tablet-line-height-h2;
+}
+
+@mixin tablet-sub-header {
+  font-size: $tablet-font-size-h3;
+  font-weight: $tablet-subheader-font-weight;
+  line-height: $tablet-line-height-h3;
+}
+
+@mixin tablet-body-large {
+  font-size: $tablet-font-size-h4;
+  font-weight: $tablet-subheader-font-weight;
+  line-height: $tablet-line-height-h4;
+}
+
+@mixin tablet-body {
+  font-size: $tablet-font-size-p;
+  font-weight: $tablet-body-font-weight;
+  line-height: $tablet-line-height-p;
+}
+
+@mixin tablet-button {
+  font-size: $tablet-font-size-h4;
+  font-weight: $tablet-subheader-font-weight;
+  line-height: $tablet-line-height-h4;
+}
+
+@mixin tablet-nav-items {
+  font-size: $tablet-font-size-nav-items;
+  font-weight: $tablet-subheader-font-weight;
+  line-height: $tablet-line-height-h3;
+}
+
+@mixin button {
+  @include mobile-button;
+  padding: $mobile-padding;
+  border-radius: calc($border-radius * 2);
+  border: none;
+  background-color: $color-sunset-orange;
+  color: $color-primary-white;
+  // @include tablet {
+  //   @include tablet-button;
+  // }
+}
+
+@mixin input {
+  @include mobile-button;
+  padding: $mobile-padding;
+  border-radius: calc($border-radius * 2);
+  border: none;
+  // @include tablet {
+  //   @include tablet-button;
+  // }
+}

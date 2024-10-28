@@ -1,0 +1,71 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.country-details {
+  padding: $mobile-padding-header $mobile-padding;
+  @include tablet {
+    padding: $tablet-padding-side;
+  }
+  @include desktop {
+    max-width: $desktop-max-width;
+    margin: 0 auto;
+  }
+
+  &__description {
+    padding-bottom: $tablet-padding;
+  }
+
+  &__budget-box {
+    padding-bottom: $mobile-padding;
+    display: flex;
+    gap: $mobile-padding;
+    flex-direction: column;
+    align-items: center;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__budget-text {
+    color: $color-ocean-blue;
+  }
+
+  &__budget {
+    padding: calc($mobile-padding/2) $mobile-padding;
+    color: $color-cloud-white;
+    background-color: $color-ocean-blue;
+    border: 2px solid $color-ocean-blue;
+    border-radius: $border-radius;
+    margin-left: $mobile-padding;
+  }
+
+  &__best-months {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $mobile-padding;
+    margin-bottom: calc(2 * $mobile-padding);
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__months-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $mobile-padding;
+  }
+
+  &__best-month {
+    text-align: center;
+    padding: calc($mobile-padding/2) $mobile-padding;
+    border-radius: $border-radius;
+    background-color: $color-sand-beige;
+    background-color: $color-sunset-orange;
+    color: $color-cloud-white;
+  }
+
+  &__loading-image--noshow {
+    display: none;
+  }
+}

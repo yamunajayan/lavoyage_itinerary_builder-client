@@ -1,0 +1,94 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  background-color: rgba(255, 255, 255, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  &--scrolled {
+    background-color: white;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: $mobile-padding;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: $tablet-padding $tablet-padding-side $mobile-padding;
+    }
+
+    @include desktop {
+      max-width: $desktop-max-width;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
+  &__logo-image {
+    height: $mobile-logo-size;
+    width: calc(2 * $mobile-logo-size);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    color: $color-sunset-orange;
+    justify-content: space-between;
+    padding-top: $mobile-padding;
+
+    @include tablet {
+      margin: 0;
+      gap: $tablet-padding;
+      padding-top: 0;
+      // width: 20rem;
+    }
+  }
+
+  &__item {
+    @include tablet-nav-items;
+    font-weight: 600;
+    position: relative;
+    padding: 0.25rem 1rem;
+    border-radius: $border-radius;
+    border: 2px solid $color-sunset-orange;
+    text-align: center;
+    &:hover {
+      cursor: pointer;
+      background-color: $color-sunset-orange;
+      color: $color-cloud-white;
+    }
+  }
+
+  &__dropdown-menu {
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+    margin-top: 0.3rem;
+    // left: 40px;
+    text-align: center;
+  }
+  &__dropdown-item {
+    font-size: 12px;
+    width: 6rem;
+    // padding: 0 8px;
+    color: #ffffff;
+    &:hover {
+      transform: scale(2);
+      cursor: pointer;
+    }
+  }
+}

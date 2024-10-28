@@ -1,0 +1,79 @@
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+@use "./styles/partials/fonts" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lora", "Lato", sans-serif;
+  // font-family: sans-serif;
+}
+
+h1 {
+  @include mobile-page-header;
+  @include tablet {
+    @include tablet-page-header;
+  }
+}
+
+h2 {
+  @include mobile-section-header;
+  @include tablet {
+    @include tablet-section-header;
+  }
+}
+
+h3 {
+  @include mobile-sub-header;
+  @include tablet {
+    @include tablet-sub-header;
+  }
+}
+
+h4 {
+  @include mobile-body-large;
+  @include tablet {
+    @include tablet-body-large;
+  }
+}
+
+p {
+  @include mobile-body;
+  @include tablet {
+    @include tablet-body;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  @include button;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input,
+select {
+  @include input;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+hr {
+  height: 2px;
+  border: none;
+  background-color: $color-slate-gray;
+}

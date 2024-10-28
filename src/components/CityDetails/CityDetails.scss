@@ -1,0 +1,97 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.city-details {
+  padding: $mobile-padding-header 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include tablet {
+    padding: $tablet-padding-side 0;
+  }
+
+  @include desktop {
+    max-width: $desktop-max-width;
+    margin: 0 auto;
+  }
+
+  &__itinerary {
+    margin-bottom: $mobile-padding-header;
+  }
+
+  &__title {
+    text-align: center;
+    padding: 0 0$mobile-padding;
+  }
+
+  &__list {
+    background-color: #f5f5f7;
+    display: flex;
+    padding: $mobile-padding;
+    flex-wrap: wrap;
+    gap: $mobile-padding;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    border-radius: $border-radius;
+    box-shadow: 2px 2px 10px $color-slate-gray;
+    &:hover {
+      //   transform: scale(0.95);
+      //   border: 2px solid $color-ocean-blue;
+      box-shadow: 2px 2px 15px $color-ocean-blue;
+    }
+    @include desktop {
+      width: 49%;
+    }
+  }
+
+  &__image-box {
+    width: 47%;
+    height: 14rem;
+    @include tablet {
+      width: 35%;
+      height: 16rem;
+    }
+    @include desktop {
+      height: 14rem;
+    }
+  }
+
+  &__details {
+    flex: 1;
+    padding: $mobile-padding;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__info {
+    &--days {
+      color: $color-ocean-blue;
+      font-weight: 600;
+    }
+  }
+
+  &__select {
+    display: flex;
+    padding: 0 $mobile-padding;
+    justify-content: end;
+  }
+
+  &__input {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__error-box {
+    display: flex;
+  }
+
+  &__error {
+    color: red;
+  }
+}
