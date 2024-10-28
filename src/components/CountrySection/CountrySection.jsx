@@ -1,7 +1,5 @@
 import "./CountrySection.scss";
 import CountryCard from "../countryCard/countryCard";
-import chevronRight from "../../assets/logos/chevron-right.svg";
-import chevronLeft from "../../assets/logos/chevron-left.svg";
 import { Link } from "react-router-dom";
 
 const CountrySection = ({ countriesArray }) => {

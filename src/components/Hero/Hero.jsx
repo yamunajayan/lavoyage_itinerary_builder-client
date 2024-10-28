@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 
 const Hero = ({ countriesArray }) => {
+  //to display mupliple images in hero section
   const images = [
     "url(src/assets/photos/beach-1.webp)",
     "url(src/assets/photos/beach-2.jpeg)",
@@ -13,7 +14,7 @@ const Hero = ({ countriesArray }) => {
     "url(src/assets/photos/beach-4.webp)",
     "url(src/assets/photos/beach-5.webp)",
   ];
-
+  //to display mupliple headlines in hero section
   const messages = [
     "Where do you want to go?",
     "Select your travel destinations...",

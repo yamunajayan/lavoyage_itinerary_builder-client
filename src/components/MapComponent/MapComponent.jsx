@@ -20,7 +20,6 @@ const MapComponent = ({ selectedMarkers, countryCoordinates }) => {
     return `lonlat:${marker.lon},${marker.lat};${markerDetail};text:${marker.name};textsize:small;whitecircle:no`;
   });
 
-  // const mapUrl = `https://maps.geoapify.com/v1/staticmap?style=${mapStyle}&width=600&height=600&center=lonlat:${lon},${lat}&zoom=${zoom}&marker=${joinedMarkerString}&apiKey=${geoapifyApiKey}&lang=en`;
   const mapUrl = `https://maps.geoapify.com/v1/staticmap?style=${mapStyle}&width=600&height=600&center=lonlat:${lon},${lat}&zoom=${zoom}${
     selectedMarkers.length > 0 ? "&marker=" + markerString.join("|") : ""
   }&apiKey=${geoapifyApiKey}&lang=en`;
