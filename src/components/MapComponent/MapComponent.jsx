@@ -3,11 +3,8 @@ import "./MapComponent.scss";
 
 const MapComponent = ({ selectedMarkers, countryCoordinates }) => {
   const geoapifyApiKey = import.meta.env.VITE_GEOAPIFY_API_KEY;
-  console.log(geoapifyApiKey);
   const mapStyle = "osm-bright";
 
-  console.log(countryCoordinates);
-  console.log(selectedMarkers);
   const zoom = 4.5;
 
   const lat = countryCoordinates.lat;
@@ -16,15 +13,12 @@ const MapComponent = ({ selectedMarkers, countryCoordinates }) => {
   const markerDetail =
     "type:material;color:red;size:x-large;icon:cloud;icontype:awesome";
 
-  console.log(selectedMarkers);
   if (selectedMarkers.length === 0) {
     console.log("no cities selected");
   }
   const markerString = selectedMarkers.map((marker) => {
     return `lonlat:${marker.lon},${marker.lat};${markerDetail};text:${marker.name};textsize:small;whitecircle:no`;
   });
-
-  // const joinedMarkerString = markerString.join("|");
 
   // const mapUrl = `https://maps.geoapify.com/v1/staticmap?style=${mapStyle}&width=600&height=600&center=lonlat:${lon},${lat}&zoom=${zoom}&marker=${joinedMarkerString}&apiKey=${geoapifyApiKey}&lang=en`;
   const mapUrl = `https://maps.geoapify.com/v1/staticmap?style=${mapStyle}&width=600&height=600&center=lonlat:${lon},${lat}&zoom=${zoom}${

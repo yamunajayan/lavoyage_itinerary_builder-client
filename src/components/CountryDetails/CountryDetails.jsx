@@ -23,9 +23,7 @@ const CountryDetails = ({ selectedCountry }) => {
         `${BASE_URL}/countries/${countryName}`,
         updatedItineraryObject
       );
-      console.log(response.data);
       setItineraryList(response.data.itinerary);
-      console.log(response.data.itinerary);
     } catch (error) {
       console.error(error);
     }
