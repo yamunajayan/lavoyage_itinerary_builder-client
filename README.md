@@ -78,7 +78,7 @@ Provide visuals of your app's screens. You can use pictures of hand-drawn sketch
 2. Week 2
 
 - Build Open AI integration
-- Deploy the font end and backend using Heroku, Netlify
+
 
 ## Future Implementations
 
@@ -86,3 +86,4 @@ Provide visuals of your app's screens. You can use pictures of hand-drawn sketch
 2. Filter based on type of vacation, road trip, adventure etc
 3. Add tripadvisor comments
 4. User login to save the itinerary, and leave comments on countries and places
+5. Deploy the font end and backend using Heroku, Netlify
