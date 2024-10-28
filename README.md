@@ -63,7 +63,7 @@ Provide visuals of your app's screens. You can use pictures of hand-drawn sketch
 ### Endpoints
 
 1. /countries : Initail data for the landing page
-2. /countries/:id : Data for each country based on id
+2. /countries/:countryName : Data for each country based on id
 
 ## Roadmap
 
