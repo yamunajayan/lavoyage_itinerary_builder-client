@@ -6,7 +6,7 @@ This is a travel itinerary bulder app. It will build an itinerary based on users
 
 ### Problem Space
 
-If someone wants to make a traven itineray, they need to resaerch alot to come up with a good one. The use of AI in creating this will make travel stress free.
+If someone wants to make a travel itineray, they need to resaerch alot to come up with a good one. The use of AI in creating this will make travel stress free.
 
 ### User Profile
 
@@ -34,12 +34,12 @@ Anyone who wants to travel to an unknown country can use it, This will give you 
 
 - Express.js
 - Node.js
-- MySQL
+- PostGreSQL
 
 ### APIs
 
 - OpenAI Api
-- Google places Api
+- GeoAPIfy APi
 
 ### Sitemap
 
