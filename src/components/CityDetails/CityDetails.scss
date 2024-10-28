@@ -86,4 +86,12 @@
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  &__error-box {
+    display: flex;
+  }
+
+  &__error {
+    color: red;
+  }
 }

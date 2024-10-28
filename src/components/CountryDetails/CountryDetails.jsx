@@ -27,6 +27,7 @@ const CountryDetails = ({ selectedCountry }) => {
     } catch (error) {
       console.error(error);
     }
+    setShowLoading(false);
   };
 
   function scrollToTargetAdjusted() {
