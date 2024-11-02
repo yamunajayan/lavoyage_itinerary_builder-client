@@ -1,5 +1,5 @@
 import "./CountrySection.scss";
-import CountryCard from "../countryCard/countryCard";
+import CountryCard from "../CountryCard/CountryCard";
 import { Link } from "react-router-dom";
 
 const CountrySection = ({ countriesArray }) => {
