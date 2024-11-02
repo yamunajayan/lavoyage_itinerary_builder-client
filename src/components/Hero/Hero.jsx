@@ -5,14 +5,20 @@ import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 
+import beach1 from "../../assets/photos/beach-1.webp";
+import beach2 from "../../assets/photos/beach-2.jpeg";
+import beach3 from "../../assets/photos/beach-3.jpg";
+import beach4 from "../../assets/photos/beach-4.webp";
+import beach5 from "../../assets/photos/beach-5.webp";
+
 const Hero = ({ countriesArray }) => {
   //to display mupliple images in hero section
   const images = [
-    "url(src/assets/photos/beach-1.webp)",
-    "url(src/assets/photos/beach-2.jpeg)",
-    "url(src/assets/photos/beach-3.jpg)",
-    "url(src/assets/photos/beach-4.webp)",
-    "url(src/assets/photos/beach-5.webp)",
+    `url(${beach1})`,
+    `url(${beach2})`,
+    `url(${beach3})`,
+    `url(${beach4})`,
+    `url(${beach5})`,
   ];
   //to display mupliple headlines in hero section
   const messages = [
