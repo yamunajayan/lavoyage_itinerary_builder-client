@@ -1,5 +1,5 @@
 import "./CityDetails.scss";
-import CountryCard from "../countryCard/countryCard";
+import CountryCard from "../CountryCard/CountryCard";
 import { useState } from "react";
 import ItineraryForm from "../ItineraryForm/ItineraryForm";
 import errorLogo from "../../assets/logos/error-24px.svg";
