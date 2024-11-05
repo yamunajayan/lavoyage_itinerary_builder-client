@@ -15,7 +15,9 @@ const CountrySection = ({ countriesArray }) => {
               <Link to={`/countries/${country.country_name}`}>
                 <CountryCard
                   countryName={country.country_name}
-                  countryImage={`${process.env.VITE_BASE_URL}${country.country_image}`}
+                  countryImage={`${import.meta.env.VITE_BASE_URL}${
+                    country.country_image
+                  }`}
                 />
               </Link>
             </li>
