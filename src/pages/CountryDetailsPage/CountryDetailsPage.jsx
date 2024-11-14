@@ -28,7 +28,9 @@ const CountryDetailsPage = () => {
     <>
       <CountryHero
         countryName={countryName}
-        countryImage={selectedCountry.country_image}
+        countryImage={`${import.meta.env.VITE_BASE_URL}${
+          selectedCountry.country_image
+        }`}
       />
       <CountryDetails selectedCountry={selectedCountry} />
     </>
