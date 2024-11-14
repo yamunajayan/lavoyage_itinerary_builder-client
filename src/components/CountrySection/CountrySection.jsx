@@ -10,6 +10,10 @@ const CountrySection = ({ countriesArray }) => {
       </h2>
       <ul className="country-section__list">
         {countriesArray.map((country) => {
+          const imageUrl = `${import.meta.env.VITE_BASE_URL}${
+            country.country_image
+          }`;
+          console.log("Image URL:", imageUrl);
           return (
             <li key={country.id} className="country-section__item">
               <Link to={`/countries/${country.country_name}`}>

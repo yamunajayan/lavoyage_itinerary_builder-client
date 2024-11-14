@@ -77,7 +77,9 @@ const CityDetails = ({ cities, getItineraryDetails, setSelectedMarkers }) => {
                 <div className="city-details__image-box">
                   <CountryCard
                     countryName={city.city_name}
-                    countryImage={city.city_image}
+                    countryImage={`${import.meta.env.VITE_BASE_URL}${
+                      city.city_image
+                    }`}
                   />
                 </div>
                 <article className="city-details__details">
